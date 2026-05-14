@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Loader2, User, Bot, AlertCircle, BookOpen, Send } from "lucide-react"
-import { executeQuery } from "@/actions/user"
+import { executeQuery1 } from "@/actions/adminchat"
 import { createUserClient } from "@/lib/createUserClient"
 const chatSchema = z.object({
   prompt: z.string().min(1, "Please enter a prompt"),
@@ -45,7 +45,7 @@ export default function ChatBotPage() {
       const formData = new FormData()
       formData.append("prompt", userPrompt)
 
-      const response = await executeQuery(formData)
+      const response = await executeQuery1(formData)
 
       if (response && response.success) {
         if (response.query && response.result) {
