@@ -164,9 +164,15 @@ http://localhost:3000
 Add your project screenshots here.
 
 ```md
-![Home Page](./screenshots/homescreen.png)
-![Chat Interface](./screenshots/chatbot.png)
-![Dashboard](./screenshots/dashboard.png)
+
+## Home Page
+![Home Page](my-app/screenshots/homescreen.png)
+
+## Chat Interface
+![Chat Interface](my-app/screenshots/chatbot.png)
+
+## Dashboard
+![Dashboard](my-app/screenshots/dashboard.png)
 ```
 
 ---
