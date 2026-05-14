@@ -163,7 +163,7 @@ http://localhost:3000
 
 Add your project screenshots here.
 
-```md
+
 
 ## Home Page
 ![Home Page](my-app/screenshots/homescreen.png)
@@ -173,7 +173,7 @@ Add your project screenshots here.
 
 ## Dashboard
 ![Dashboard](my-app/screenshots/dashboard.png)
-```
+
 
 ---
 
