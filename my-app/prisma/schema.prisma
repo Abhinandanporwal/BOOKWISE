@@ -1,37 +1,33 @@
-// This is your Prisma schema file.
-// Docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl=env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
-
 
 model User {
   id            String   @id @default(uuid())
   email         String   @unique
   name          String?
+  createdAt     DateTime @default(now())
   borrowedBooks Book[]
   fines         Fine[]
-  createdAt     DateTime @default(now())
 }
 
 model Book {
-  id            String   @id @default(uuid())
+  id            String    @id @default(uuid())
   title         String
   author        String
   genre         String?
   publishedYear Int?
-  available     Boolean  @default(true)
+  available     Boolean   @default(true)
   borrowerId    String?
-  borrower      User?    @relation(fields: [borrowerId], references: [id])
   borrowDate    DateTime?
   dueDate       DateTime?
+  borrower      User?     @relation(fields: [borrowerId], references: [id])
 }
 
 model Fine {
@@ -40,6 +36,6 @@ model Fine {
   reason    String?
   paid      Boolean  @default(false)
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
 }
